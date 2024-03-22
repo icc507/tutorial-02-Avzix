@@ -11,11 +11,12 @@
 #         ('mundo', 44, 20, 90, 'hola', 'mundo', 44)
 
 # Leer las dos listas de entrada y convertir los valores a enteros
-lista1 = [int(x) if x.isdigit() else x for x in input().split()]
-lista2 = [int(x) if x.isdigit() else x for x in input().split()]
+# Leer las dos listas de entrada y convertir los valores a enteros
 
-# Crear la nueva lista en el orden especificado (t2, t1, t2)
+
+lista1 = tuple(int(x) if x.isdigit() else x for x in input().split())
+lista2 = tuple(int(x) if x.isdigit() else x for x in input().split())
+
 nueva_lista = lista2 + lista1 + lista2
 
-# Imprimir la nueva lista
 print(nueva_lista)
