@@ -11,25 +11,36 @@
 #         [20, [8, [5, [], [], []], [], []], [], [30, [], [], [90, [], [90, [], [90, [], [], []], []], []]]]
 
 
-def insertar_en_arbol(arbol, numero):
-    if not arbol:
-        
-        return (numero, [], [], [])
-    elif numero == arbol[0]:
-        
-        arbol[2].append(numero)
-    elif numero < arbol[0]:
-        
-        arbol[1] = insertar_en_arbol(arbol[1], numero)
-    else:
-       
-        arbol[3] = insertar_en_arbol(arbol[3], numero)
-    return arbol
+def convertirEnteros(lista):
+    nuevaLista = []
+    for elemento in lista:
+        try:
+            nuevoElemento = int(elemento)
+        except ValueError:
+            nuevoElemento = elemento
+        nuevaLista.append(nuevoElemento)
+    return tuple(nuevaLista)
 
-numeros = [int(x) for x in input().split()]
-arbol = ()
-for numero in numeros:
-    arbol = insertar_en_arbol(arbol, numero)
+def arbolTrinario(numero):
+return [numero, [], [], []]
 
+def insertaEnArbolTrinario(arbol,numero):
+if arbol==[]:
+arbol+=arbolTrinario(numero)
+elif numero < arbol[0]:
+insertaEnArbolTrinario(arbol[1],numero)
+elif numero == arbol[0]:
+insertaEnArbolTrinario(arbol[2], numero)
+else:
+insertaEnArbolTrinario(arbol[3],numero)
+
+entrada = input().split()
+
+entradaTupla = convertirEnteros(entrada)
+
+arbol = arbolTrinario(entradaTupla[0])
+
+for elemento in entradaTupla[1:]:
+insertaEnArbolTrinario(arbol, elemento)
 
 print(arbol)
