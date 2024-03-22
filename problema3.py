@@ -14,18 +14,22 @@
 def insertar_en_arbol(arbol, numero):
     if not arbol:
         
-        return [numero, [], [], []]
-    elif numero == arbol[0]:      
+        return (numero, [], [], [])
+    elif numero == arbol[0]:
+        
         arbol[2].append(numero)
-    elif numero < arbol[0]:    
+    elif numero < arbol[0]:
+        
         arbol[1] = insertar_en_arbol(arbol[1], numero)
     else:
+       
         arbol[3] = insertar_en_arbol(arbol[3], numero)
     return arbol
 
 numeros = [int(x) for x in input().split()]
-arbol = []
+arbol = ()
 for numero in numeros:
     arbol = insertar_en_arbol(arbol, numero)
+
 
 print(arbol)
