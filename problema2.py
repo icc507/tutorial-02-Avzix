@@ -9,8 +9,10 @@
 #         (77, 'jiji', 'hola', 90, 20)
 
 
-elementos = input().split()
+elementos = [int(x) if x.isdigit() else x for x in input().split()]
+
 elementos.reverse()
+
 tupla = tuple(elementos)
 
 print(tupla)
