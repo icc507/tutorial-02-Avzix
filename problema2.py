@@ -9,8 +9,8 @@
 #         (77, 'jiji', 'hola', 90, 20)
 
 
-l1 = (input().split())
-l1.reverse()
-tupla = (l1)
+elementos = input().split()
+elementos.reverse()
+tupla = tuple(elementos)
 
 print(tupla)
