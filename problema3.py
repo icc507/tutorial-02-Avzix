@@ -12,18 +12,14 @@
 
 
 def insertar_en_arbol(arbol, numero):
-    if arbol == []:
-
+    if not arbol:
+        
         return [numero, [], [], []]
-    elif numero == arbol[0]:
-
+    elif numero == arbol[0]:      
         arbol[2].append(numero)
-        return arbol
-    elif numero < arbol[0]:
-
+    elif numero < arbol[0]:    
         arbol[1] = insertar_en_arbol(arbol[1], numero)
     else:
-
         arbol[3] = insertar_en_arbol(arbol[3], numero)
     return arbol
 
