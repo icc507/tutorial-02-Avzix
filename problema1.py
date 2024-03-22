@@ -10,8 +10,12 @@
 #La salida debe ser
 #         ('mundo', 44, 20, 90, 'hola', 'mundo', 44)
 
-t1 = tuple(input().split())
-t2 = tuple(input().split())
+# Leer las dos listas de entrada y convertir los valores a enteros
+lista1 = [int(x) if x.isdigit() else x for x in input().split()]
+lista2 = [int(x) if x.isdigit() else x for x in input().split()]
 
-tupla = (t1 + t2 + t1)
-print (tupla)
+# Crear la nueva lista en el orden especificado (t2, t1, t2)
+nueva_lista = lista2 + lista1 + lista2
+
+# Imprimir la nueva lista
+print(nueva_lista)
